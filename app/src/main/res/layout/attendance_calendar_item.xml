@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <data class="CalendarHeanderBinding">
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.example.kids_love_cloneapp_test01.customcalendar_set.Att_CalendarListViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            setCalendarHeaderText=""
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+<!--    @{model.mHeaderDate}-->
+
+</layout>

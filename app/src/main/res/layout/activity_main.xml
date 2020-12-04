@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"
+        android:background="#00a9e0"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_white_dehaze_24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:onClick="click_dehaze_button"/>
+
+            <TextView
+                android:text="키즈사랑"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:clickable="true"
+                android:onClick="click_help"
+                android:src="@drawable/ic_white_help_outline_24"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+<!--        스크롤 네비-->
+        <HorizontalScrollView
+            android:id="@+id/scrollview_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/toolbar_scroll"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="?attr/actionBarSize">
+<!--            스크롤네비 아이템들-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--                홈-->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:onClick="click_home"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="홈"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/home_bottombar"
+                            android:background="#00a9e0"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+
+                    </LinearLayout>
+
+                    <!--            알림장-->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:onClick="click_notice"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="알림장"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/notice_bottombar"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+
+                    </LinearLayout>
+
+                    <!--                출결통학-->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="click_attendance"
+                        android:orientation="vertical"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="출결/통학"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/attendance_bottombar"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+
+                    </LinearLayout>
+
+
+                    <!--                앨범-->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="click_album"
+                        android:orientation="vertical"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="앨범"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/album_bottombar"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+
+                    </LinearLayout>
+
+                    <!--                일정-->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="click_calendar"
+                        android:orientation="vertical"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="일정"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/calendar_bottombar"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+                    </LinearLayout>
+
+                    <!--                단체방-->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="click_Group_room"
+                        android:orientation="vertical"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="단체방"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="#555555"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/Group_room_bottombar"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!--            화살표-->
+        <ImageView
+            android:id="@+id/navBtn_left"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_blue_chevron_left_24"
+            android:clickable="true"
+            android:onClick="navBtn_left"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/navBtn_right"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_white_chevron_right_24"
+            android:clickable="true"
+            android:onClick="navBtn_right"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    상단 스크롤바-->
+
+
+<!--    메인 스크롤 뷰-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<!--        홈화면 프레그먼트에 옴길 스크롤 뷰-->
+        <!--        홈화면 프레그먼트에 옮길 스크롤뷰-->
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/main_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+
+
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/hint_text"
+            android:background="@drawable/top_line_border"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+            <ImageView
+                android:clickable="true"
+                android:onClick="click_clear_hint"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_clear_24"
+                android:layout_marginRight="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+
+            <TextView
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="아이콘을 길게 눌러서 위치를 변경할 수 있습니다."
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <ImageView
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_baseline_more_horiz_24"
+            android:background="@drawable/more_horiz_image"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="35dp"
+            android:clickable="true"
+            android:onClick="click_floating_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:elevation="4dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

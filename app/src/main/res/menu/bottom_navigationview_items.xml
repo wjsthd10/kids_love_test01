@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/notice"
+        android:enabled="true"
+        android:title="알림장"/>
+
+    <item
+        android:id="@+id/attendance"
+        android:enabled="true"
+        android:title="출결/통학"/>
+
+    <item
+        android:id="@+id/album"
+        android:enabled="true"
+        android:title="앨범"/>
+
+    <item
+        android:id="@+id/calendar"
+        android:enabled="true"
+        android:title="일정"/>
+    <item
+        android:id="@+id/Group_room"
+        android:enabled="true"
+        android:title="단체방"/>
+
+
+</menu>
