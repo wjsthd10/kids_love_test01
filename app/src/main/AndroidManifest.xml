@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kids_love_cloneapp_test01">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Kids_love_cloneApp_Test01">
-        <activity android:name=".fragments.Home_fragment"></activity>
+        android:theme="@style/Theme.Kids_love_cloneApp_Test01"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".click_album.Click_Album_BigImage"></activity>
+        <activity android:name=".click_album.Click_Album" />
+        <activity android:name=".fragments.Home_fragment" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Adapters.BigImage_Adapter" />
     </application>
 
 </manifest>

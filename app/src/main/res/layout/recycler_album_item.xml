@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/album_item_border"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/album_lay_onclick_showImage"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="click_album_item_showImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dd_header_album_item"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:gravity="center"
+                android:textColor="#00a9e0"
+                android:text="08"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:id="@+id/text_dd_header_album_item"
+                android:textColor="#00a9e0"
+                android:text="화"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/dd_header_album_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/title_header_album_item"
+                app:layout_constraintLeft_toRightOf="@id/dd_header_album_item"
+                app:layout_constraintBottom_toBottomOf="@id/dd_header_album_item"
+                android:textColor="@color/black"
+                android:text="From.등하원테스트"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/titleData_header_album_item"
+                app:layout_constraintBottom_toBottomOf="@id/text_dd_header_album_item"
+                app:layout_constraintLeft_toRightOf="@id/text_dd_header_album_item"
+                android:text="2020년 12월 8일 오후 14:10"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/text_dd_header_album_item"
+                android:text="키즈사랑앨범"
+                android:textSize="12sp"
+                android:textColor="#00a9e0"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    중앙선-->
+        <View
+            android:layout_marginHorizontal="2dp"
+            android:background="@drawable/button_border_line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--        앨범올릴때 입력한 제목-->
+            <TextView
+                android:id="@+id/msg_header_album_itme"
+                android:maxLines="1"
+                android:text="앨범제목"
+                android:textColor="@color/black"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+<!--        사진보여줌-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <ImageView
+                    android:id="@+id/images_header_album_item01"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+<!--  https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile7.uf.tistory.com%2Fimage%2F24283C3858F778CA2EFABE              -->
+
+                <ImageView
+                    android:id="@+id/images_header_album_item02_gone"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:scaleType="centerCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+<!--https://i.pinimg.com/originals/05/1f/f3/051ff3fb781ff83c9b0f8a32f9922fa6.png-->
+            </LinearLayout>
+
+            <View
+                android:background="@drawable/button_border_line"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/getEmoji_album_item"
+                android:text="내 표정을 남겨주세요."
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="댓글 "
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/recomdeNum_album_item"
+                android:layout_marginRight="8dp"
+                android:text="0"
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="이미지 "
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/imagesNum_album_item"
+                android:layout_marginRight="8dp"
+                android:text="0"
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="#DDE4E4E4"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/emoji_album_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="click_album_item_showEmoji"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_sentiment_satisfied_alt_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="표정"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question_album_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="click_album_item_showQuestion"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_history_edu_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="문의"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_album_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="click_album_item_showShare"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_share_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="공유"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

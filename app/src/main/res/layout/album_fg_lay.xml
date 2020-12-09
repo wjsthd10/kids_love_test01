@@ -16,7 +16,7 @@
         android:layout_height="?attr/actionBarSize">
 
         <Button
-            android:id="@+id/to_day_notiy"
+            android:id="@+id/to_day_album"
             android:text="오늘"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
@@ -31,19 +31,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-<!--todo clickEvent Main에서 처리해야함-->
             <ImageView
-                android:id="@+id/btn_left_notiy"
+                android:id="@+id/btn_left_album"
                 android:layout_marginRight="10dp"
                 android:clickable="true"
-                android:onClick="click_notiy_leftBTN"
                 android:src="@drawable/ic_8080_arrow_left_24"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
 
             <TextView
                 android:text="2020년"
-                android:id="@+id/yy_notiy"
+                android:id="@+id/yy_album"
                 android:clickable="true"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/black"
@@ -52,7 +50,7 @@
                 android:layout_height="match_parent"/>
 
             <TextView
-                android:id="@+id/mm_notiy"
+                android:id="@+id/mm_album"
                 android:clickable="true"
                 android:text="12월"
                 android:layout_marginRight="10dp"
@@ -63,7 +61,7 @@
 
 
             <ImageView
-                android:id="@+id/btn_right_notiy"
+                android:id="@+id/btn_right_album"
                 android:clickable="true"
                 android:src="@drawable/ic_8080_arrow_right_24"
                 android:layout_width="wrap_content"
@@ -71,8 +69,8 @@
 
         </LinearLayout>
         <Button
-            android:id="@+id/category_notiy"
-            android:text="카테고리"
+            android:id="@+id/category_album"
+            android:text="앨범 검색"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             android:layout_width="wrap_content"
@@ -80,14 +78,14 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_notiy"
+        android:id="@+id/recycler_album"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#EFEFEF"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
         android:paddingHorizontal="6dp"
         android:paddingTop="6dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
     </androidx.recyclerview.widget.RecyclerView>
 

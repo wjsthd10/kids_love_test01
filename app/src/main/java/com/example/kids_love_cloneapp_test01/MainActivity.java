@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kids_love_cloneapp_test01.Adapters.FragmentAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void click_help(View view) {
         //도움말 클릭
+        Toast.makeText(this, "도움말 버튼클릭", Toast.LENGTH_SHORT).show();
     }
 
     public void click_floating_home(View view) {

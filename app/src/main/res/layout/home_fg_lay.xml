@@ -138,7 +138,7 @@
                     android:background="@drawable/border_radius"
                     android:padding="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_history_edu_24"
+                    android:src="@drawable/ic_baseline_history_blue_24"
                     android:layout_margin="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

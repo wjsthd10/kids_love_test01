@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -63,15 +64,10 @@ public class Notification_FG extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_left_notiy:break;
-            case R.id.btn_right_notiy:break;
-            case R.id.yy_notiy:break;
-            case R.id.mm_notiy:break;
-            case R.id.to_day_notiy:break;
-            case R.id.category_notiy:break;
 
         }
     }
+
 
     @Override
     public void onResume() {
