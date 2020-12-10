@@ -3,6 +3,7 @@ package com.example.kids_love_cloneapp_test01.click_album;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -33,6 +34,7 @@ public class Click_Album extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Toast.makeText(this, "clci_Album.class", Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_click__album);
         title_parent=findViewById(R.id.album_item_parent_text);
         title_from=findViewById(R.id.album_item_from_text);
@@ -41,8 +43,9 @@ public class Click_Album extends AppCompatActivity {
         recyclerView=findViewById(R.id.getAlbum_item_images);
         recomend=findViewById(R.id.et_album_item_recomend);
         scrollView=findViewById(R.id.alvum_item_scrollview);
-        loadData();
         adapter=new Click_AlbumItem_Adapter(this, items);
+        loadData();
+
         recyclerView.setAdapter(adapter);
         imm=(InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         

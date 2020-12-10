@@ -9,6 +9,8 @@
     android:layout_height="match_parent"
     tools:context=".click_album.Click_Album_BigImage">
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:background="#00a9e0"
         android:layout_width="match_parent"
@@ -41,13 +43,21 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/bigImage_pager"
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/bigImage_pager"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </androidx.viewpager.widget.ViewPager>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bigImage_RC"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </androidx.viewpager.widget.ViewPager>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:orientation="horizontal"

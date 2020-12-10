@@ -2,10 +2,12 @@ package com.example.kids_love_cloneapp_test01.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +23,7 @@ public class Click_AlbumItem_Adapter extends RecyclerView.Adapter {
 
     Context context;
     ArrayList<Album_clickItems> items;
+    ArrayList<String> itemsString=new ArrayList<>();
 
     public Click_AlbumItem_Adapter(Context context, ArrayList<Album_clickItems> items) {
         this.context = context;
@@ -43,13 +46,23 @@ public class Click_AlbumItem_Adapter extends RecyclerView.Adapter {
 
         Glide.with(context).load(items.get(position).album_images).into(vh.imageView);
 
+        for (int i=0;i<items.size();i++){
+            itemsString.add(items.get(i).album_images);
+        }
+
         vh.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context, Click_Album_BigImage.class);
                 intent.putExtra("position", position);
                 intent.putExtra("items_size", items.size());
+                intent.putExtra("items_String", itemsString);
+                Log.i("imageNum",items.size()+"");
                 context.startActivity(intent);
+
+
+                //runtime exeption
+//                context.startActivity(intent);
             }
         });
 
