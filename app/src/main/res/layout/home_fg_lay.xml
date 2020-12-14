@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:layout_constraintHeight_max="550dp"
     android:background="@color/white"
     android:id="@+id/main_Scrollview"
@@ -22,8 +23,32 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="30dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+        <LinearLayout
+            android:id="@+id/click_child_change"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_border_line"
+            android:clickable="true"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/kids_image"
+            app:layout_constraintLeft_toLeftOf="@id/kids_image"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_baseline_settings_24"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:text="자녀변경"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -50,348 +75,375 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <TextView
+                android:id="@+id/kids_grup"
+                android:text="반/부"
+                android:layout_marginTop="8dp"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
 
         <TextView
             android:id="@+id/blueLine"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/kids_image"
-            android:background="@drawable/border_line_blue"
+            app:layout_constraintTop_toBottomOf="@id/click_child_change"
+            android:background="@drawable/home_blue_underbar"
             android:layout_width="match_parent"
-            android:layout_height="3dp"/>
+            android:layout_height="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_home_lay_items_01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="18dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/blueLine"
+            app:spanCount="3">
+
+<!--            tools:layout_editor_absoluteX="20dp"-->
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
         <!--           프로필 밑에 기준선 끝나는 부분-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            app:layout_constraintTop_toTopOf="@id/blueLine"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:padding="16dp"
-            android:layout_height="match_parent">
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            app:layout_constraintTop_toTopOf="@id/blueLine"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:padding="16dp"-->
+<!--            android:layout_height="match_parent">-->
 
-            <!--                알림장 레이아웃-->
-            <LinearLayout
-                android:id="@+id/speaker_icon"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            &lt;!&ndash;                알림장 레이아웃&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/speaker_icon"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_speaker_campaign_24"
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="알림장"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_speaker_campaign_24"-->
+<!--                    android:layout_margin="4dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="알림장"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/album_icon"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/album_icon"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_photo_size_select_actual_24"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="앨범"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_baseline_photo_size_select_actual_24"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="앨범"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <!--                아이콘 사이의 공백-->
-            <TextView
-                android:id="@+id/line01"
-                app:layout_constraintTop_toBottomOf="@id/album_icon"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"/>
+<!--            &lt;!&ndash;                아이콘 사이의 공백&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/line01"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/album_icon"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="12dp"/>-->
 
-            <!--                출결 통학 커스텀 태두리 생성-->
-            <LinearLayout
-                android:id="@+id/attendance_icon"
-                app:layout_constraintLeft_toRightOf="@id/speaker_icon"
-                app:layout_constraintRight_toLeftOf="@id/album_icon"
-                app:layout_constraintTop_toTopOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            &lt;!&ndash;                출결 통학 커스텀 태두리 생성&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/attendance_icon"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/speaker_icon"-->
+<!--                app:layout_constraintRight_toLeftOf="@id/album_icon"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:background="@drawable/border_radius"
-                    android:padding="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_history_blue_24"
-                    android:layout_margin="6dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="출결/통학"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_baseline_history_blue_24"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="출결/통학"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/calendar_icon"
-                app:layout_constraintTop_toBottomOf="@id/line01"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/school_bus_icon"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/calendar_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line01"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/school_bus_icon"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:layout_weight="1"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_baseline_calendar_today_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="일정"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:src="@drawable/ic_baseline_calendar_today_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="일정"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/group_room_icon"
-                app:layout_constraintTop_toBottomOf="@id/line01"
-                app:layout_constraintLeft_toRightOf="@id/calendar_icon"
-                app:layout_constraintRight_toLeftOf="@id/album_icon"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/group_room_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line01"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/calendar_icon"-->
+<!--                app:layout_constraintRight_toLeftOf="@id/album_icon"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:background="@drawable/border_radius"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/ic_baseline_people_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="단체방"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:src="@drawable/ic_baseline_people_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="단체방"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/question_icon"
-                app:layout_constraintTop_toBottomOf="@id/line01"
-                app:layout_constraintRight_toRightOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
-
-                <ImageView
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_blue_help_outline_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="문의함"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <!--                아이콘 사이의 공백-->
-            <TextView
-                android:id="@+id/line02"
-                app:layout_constraintTop_toBottomOf="@id/question_icon"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"/>
+<!--            </LinearLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/school_bus_icon"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/line02"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/question_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line01"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:background="@drawable/border_radius"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/ic_baseline_directions_bus_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="통학버스"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_blue_help_outline_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="문의함"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-
-            <LinearLayout
-                android:id="@+id/dosage_icon"
-                app:layout_constraintTop_toBottomOf="@id/line02"
-                app:layout_constraintLeft_toRightOf="@id/calendar_icon"
-                app:layout_constraintRight_toLeftOf="@id/album_icon"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:background="@drawable/border_radius"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/ic_baseline_medical_services_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="투약의뢰"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
+<!--            &lt;!&ndash;                아이콘 사이의 공백&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/line02"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/question_icon"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="12dp"/>-->
 
 
-            <LinearLayout
-                android:id="@+id/money_icon"
-                app:layout_constraintTop_toBottomOf="@id/line02"
-                app:layout_constraintRight_toRightOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/school_bus_icon"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line02"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_monetization_on_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="납부현황"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:src="@drawable/ic_baseline_directions_bus_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="통학버스"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
-
-            <!--                아이콘 사이의 공백-->
-            <TextView
-                android:id="@+id/line03"
-                app:layout_constraintTop_toBottomOf="@id/money_icon"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"/>
+<!--            </LinearLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/school_food_icon"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/line03"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/dosage_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line02"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/calendar_icon"-->
+<!--                app:layout_constraintRight_toLeftOf="@id/album_icon"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:background="@drawable/border_radius"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/ic_baseline_local_dining_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="급식정보"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:src="@drawable/ic_baseline_medical_services_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="투약의뢰"-->
+<!--                    android:textColor="@color/black" />-->
 
-            <LinearLayout
-                android:id="@+id/health_icon"
-                app:layout_constraintTop_toBottomOf="@id/line03"
-                app:layout_constraintLeft_toRightOf="@id/calendar_icon"
-                app:layout_constraintRight_toLeftOf="@id/album_icon"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:background="@drawable/border_radius"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/ic_baseline_timer_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="체력측정"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/promotion_icon"
-                app:layout_constraintTop_toBottomOf="@id/line03"
-                app:layout_constraintRight_toRightOf="parent"
-                android:orientation="vertical"
-                android:layout_width="82dp"
-                android:layout_height="100dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/money_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line02"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
 
-                <ImageView
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_stars_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="납부현황"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_baseline_monetization_on_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="납부현황"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            &lt;!&ndash;                아이콘 사이의 공백&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/line03"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/money_icon"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="12dp"/>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/school_food_icon"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line03"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
+
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:src="@drawable/ic_baseline_local_dining_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="급식정보"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/health_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line03"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/calendar_icon"-->
+<!--                app:layout_constraintRight_toLeftOf="@id/album_icon"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
+
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:background="@drawable/border_radius"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    android:src="@drawable/ic_baseline_timer_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="체력측정"-->
+<!--                    android:textColor="@color/black" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/promotion_icon"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/line03"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="82dp"-->
+<!--                android:layout_height="100dp">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_baseline_stars_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:text="납부현황"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
