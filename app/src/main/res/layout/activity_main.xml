@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_lay"
+    android:layout_gravity="left"
+    tools:openDrawer="left"
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
@@ -33,10 +41,23 @@
                 android:text="키즈사랑"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/main_homeButton"
+                android:visibility="invisible"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:onClick="click_home"
+                android:src="@drawable/ic_white_baseline_home_24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
 
             <ImageView
                 android:clickable="true"
@@ -54,8 +75,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:background="@drawable/top_scroll_bottom_line"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
+
+
+<!--        00a9e0-->
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="4dp">
+        </androidx.recyclerview.widget.RecyclerView>
 
 <!--        스크롤 네비-->
         <HorizontalScrollView
@@ -63,14 +95,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/toolbar_scroll"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:minHeight="?attr/actionBarSize">
+                android:minHeight="50dp">
 <!--            스크롤네비 아이템들-->
                 <LinearLayout
                     android:orientation="horizontal"
@@ -93,11 +125,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/home_bottombar"
-                            android:background="#00a9e0"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
 
                     </LinearLayout>
 
@@ -117,11 +145,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/notice_bottombar"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
 
                     </LinearLayout>
 
@@ -141,11 +165,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/attendance_bottombar"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
 
                     </LinearLayout>
 
@@ -166,11 +186,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/album_bottombar"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
 
                     </LinearLayout>
 
@@ -190,11 +206,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/calendar_bottombar"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
                     </LinearLayout>
 
                     <!--                단체방-->
@@ -213,12 +225,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"/>
-                        <TextView
-                            android:id="@+id/Group_room_bottombar"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"/>
+
                     </LinearLayout>
+
+
 
                 </LinearLayout>
             </LinearLayout>
@@ -230,6 +240,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             android:src="@drawable/ic_blue_chevron_left_24"
             android:clickable="true"
+            android:visibility="gone"
             android:onClick="navBtn_left"
             android:layout_width="40dp"
             android:layout_height="match_parent"/>
@@ -293,6 +304,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/main_pager_toggle"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:src="@drawable/ic_baseline_more_horiz_24"
@@ -305,9 +317,129 @@
             android:layout_height="40dp"
             android:elevation="4dp"/>
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawer_frame_lay"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:background="#00a9e0"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <TextView
+                    android:id="@+id/userName_nav"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="닉네임을 설정해 주세요."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/click_notification_setting"
+                    android:clickable="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_white_notifications_active_24"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/click_home_nav"
+                    android:clickable="true"
+                    android:onClick="click_home"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_white_baseline_home_24"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/click_setting_nav"
+                    android:clickable="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_white_baseline_settings_24"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <!--    nav_header_title  0554-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nav_RC_hori"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <View
+                android:background="#dddd"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nav_RC_vertical"
+                android:background="#dddd"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingBottom="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <!--    todo 배경설정-->
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:background="@drawable/nav_grey_background"
+                android:paddingHorizontal="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:textSize="19sp"
+                    android:textColor="@color/black"
+                    android:text="키즈사랑"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:padding="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/nav_push_button_border"
+                    android:clickable="true"
+                    android:onClick="click_push"
+                    android:text="추천"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#DD5C5C5C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

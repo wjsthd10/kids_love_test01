@@ -18,43 +18,26 @@ import com.example.kids_love_cloneapp_test01.R;
 
 import java.util.ArrayList;
 
-public class Notification_FG extends Fragment implements View.OnClickListener {
+public class Notification_FG extends Fragment{
 
     ArrayList<RC_Notification_item> items=new ArrayList<>();
     Notification_RC_Adapter rc_adapter;
     RecyclerView recyclerView;
 
-    Context context;
-
-    public Notification_FG() {
-    }
-
-    public Notification_FG(Context context) {
-        this.context = context;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        items.add(new RC_Notification_item(
-                "03",
-                "From, QA유치원",
-                "2020년 12월 3일 오후 18:32",
-                "목",
-                "12월 4일 식단표가 등록되었습니다."
-        ));
-//        loadData();
+        loadData();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-//        ViewGroup viewGroup= (ViewGroup) inflater.inflate(R.layout.notification_fg_lay, container, false);
-
         View view=inflater.inflate(R.layout.notification_fg_lay, container, false);
 
-        rc_adapter=new Notification_RC_Adapter(context, items);
+        rc_adapter=new Notification_RC_Adapter(container.getContext(), items);
         recyclerView=view.findViewById(R.id.recycler_notiy);
         recyclerView.setAdapter(rc_adapter);
 
@@ -62,28 +45,20 @@ public class Notification_FG extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-
-        }
-    }
-
-
-    @Override
     public void onResume() {
         super.onResume();
-//        loadData();
+        loadData();
     }
 
     void loadData(){
-        for (int i=0;i<items.size();i++){
-            items.add(new RC_Notification_item(
-               "03",
+        items.clear();
+        items.add(new RC_Notification_item(
+                "03",
                "From, QA유치원",
                "2020년 12월 3일 오후 18:32",
                "목",
-               "12월 4일 식단표가 등록되었습니다."
-            ));
-        }
+                "12월 4일 식단표가 등록되었습니다."
+        ));
+
     }
 }

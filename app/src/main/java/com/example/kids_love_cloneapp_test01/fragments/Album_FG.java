@@ -19,7 +19,7 @@ import com.example.kids_love_cloneapp_test01.R;
 
 import java.util.ArrayList;
 
-public class Album_FG extends Fragment implements View.OnClickListener {
+public class Album_FG extends Fragment{
 
     ArrayList<RC_Album_item> items=new ArrayList<>();
     Album_RC_Adapter rc_adapter;
@@ -29,13 +29,14 @@ public class Album_FG extends Fragment implements View.OnClickListener {
     public Album_FG() {
     }
 
-    public Album_FG(Context context) {
-        this.context = context;
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadData();
+    }
+
+    public void loadData(){
+        items.clear();
         items.add(new RC_Album_item(
                 "08",
                 "화",
@@ -48,7 +49,13 @@ public class Album_FG extends Fragment implements View.OnClickListener {
                 "2"
         ));
     }
-    
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadData();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,13 +71,6 @@ public class Album_FG extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-//            case R.id.album_lay_onclick_showImage:
-//                click_album_item_showImage(v);
-        }
-    }
 
 
 }

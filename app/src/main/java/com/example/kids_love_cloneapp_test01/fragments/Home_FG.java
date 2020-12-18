@@ -5,24 +5,41 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kids_love_cloneapp_test01.Adapters.FragmentAdapter;
 import com.example.kids_love_cloneapp_test01.Adapters.Home_RC_Adapter;
 import com.example.kids_love_cloneapp_test01.Items.RC_Home_item;
+import com.example.kids_love_cloneapp_test01.MainActivity;
 import com.example.kids_love_cloneapp_test01.R;
 import com.example.kids_love_cloneapp_test01.RC_ItemDecoration.Home_ItemDecoration;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class Home_FG extends Fragment {
+public class Home_FG extends Fragment{
 
     ArrayList<RC_Home_item> items=new ArrayList<>();
     RecyclerView recyclerView;
     Home_RC_Adapter rc_adapter;
+    FragmentAdapter fragmentAdapter;
+
+    public Home_FG(FragmentAdapter fragmentAdapter) {
+        this.fragmentAdapter=fragmentAdapter;
+    }
+
+    public Home_FG() {
+    }
+
+    public static Home_FG newInstance(){
+        return new Home_FG();
+    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,8 +58,8 @@ public class Home_FG extends Fragment {
         items.add(new RC_Home_item(R.drawable.ic_baseline_timer_24, "체력측정"));
         items.add(new RC_Home_item(R.drawable.ic_baseline_stars_24, "승급승단"));
 
-
     }
+
 
     @Nullable
     @Override
@@ -57,10 +74,7 @@ public class Home_FG extends Fragment {
         rc_adapter=new Home_RC_Adapter(getContext(), items);
         recyclerView.setAdapter(rc_adapter);
 
-
         return view;
     }
-
-
 
 }

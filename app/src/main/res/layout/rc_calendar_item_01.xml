@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:id="@+id/click_rc_calendar_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/album_item_border"
+    android:clickable="true"
+    android:layout_marginBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--        앨범올릴때 입력한 제목-->
+            <TextView
+                android:id="@+id/msg_header_calendar_itme"
+                android:maxLines="1"
+                android:paddingHorizontal="20dp"
+                android:text="행사일 12월 16일(수) ~ 12월 16일(수)"
+                android:textColor="@color/black"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+<!--        사진보여줌-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#dddd"
+                android:minHeight="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/calendar_item_background"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingVertical="20dp"
+                    android:background="#F33977"
+                    android:scaleType="centerCrop"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/images_header_calendar_item01"
+                        android:src="@drawable/ic_white_assignment_24"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"/>
+
+                </LinearLayout>
+<!--                이미지 보여줌-->
+
+                <LinearLayout
+                    android:layout_weight="3.5"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/rc_calendar_item_title"
+                        android:text="일정 테스트2"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/rc_calendar_item_kids"
+                        android:text="김래원 외 2명"
+                        android:textColor="#DD2B2B2B"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/rc_calendar_item_location"
+                        android:text="위치->위치 선택안하면 안보임"
+                        android:textColor="#DD2B2B2B"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/rc_calendar_item_from"
+                        android:text="From. 테스트8 직책"
+                        android:textColor="#DD2B2B2B"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        <View
+            android:background="@drawable/button_border_line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/getEmoji_calendar_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:text="내 표정을 남겨주세요."
+                android:textColor="#8C8C8C"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/setEmoji_icon"
+                android:layout_marginLeft="10dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_emoticon_good_24"
+                android:layout_gravity="center_vertical"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/rc_item_imageText"
+                android:text="이미지 "
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="end"
+                android:layout_marginLeft="8dp"
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/rc_item_imagesNum"
+                android:text="0"
+                android:layout_gravity="center_vertical"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:textColor="#8C8C8C"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="#DDE4E4E4"
+            android:paddingVertical="6dp"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/emoji_calendar_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_sentiment_satisfied_alt_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="표정"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question_calendar_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_history_edu_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="문의"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_calendar_item_onclick"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_share_24"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="공유"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="#575757"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

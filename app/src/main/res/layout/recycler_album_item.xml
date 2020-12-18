@@ -118,12 +118,12 @@
                     android:layout_height="match_parent"/>
 <!--https://i.pinimg.com/originals/05/1f/f3/051ff3fb781ff83c9b0f8a32f9922fa6.png-->
             </LinearLayout>
-
-            <View
-                android:background="@drawable/button_border_line"
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"/>
         </LinearLayout>
+
+        <View
+            android:background="@drawable/button_border_line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"/>
 
         <LinearLayout
             android:orientation="horizontal"

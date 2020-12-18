@@ -9,8 +9,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.kids_love_cloneapp_test01.MainActivity;
 import com.example.kids_love_cloneapp_test01.fragments.Album_FG;
 import com.example.kids_love_cloneapp_test01.fragments.Attendance_FG;
+import com.example.kids_love_cloneapp_test01.fragments.Calendar_FG;
+import com.example.kids_love_cloneapp_test01.fragments.Group_room_FG;
 import com.example.kids_love_cloneapp_test01.fragments.Home_FG;
 import com.example.kids_love_cloneapp_test01.fragments.Notification_FG;
 
@@ -18,13 +21,23 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
     Fragment[] fragments=new Fragment[6];
 
+    Context context;
+
+    public FragmentAdapter(@NonNull FragmentManager fm, int behavior, Context context) {
+        super(fm, behavior);
+        this.context = context;
+    }
+
     public FragmentAdapter(@NonNull FragmentManager fm) {
         super(fm);
         fragments[0]=new Home_FG();
         fragments[1]=new Notification_FG();
         fragments[2]=new Attendance_FG();
         fragments[3]=new Album_FG();
+        fragments[4]=new Calendar_FG();
+        fragments[5]=new Group_room_FG();
     }
+
 
 
     @NonNull
@@ -35,8 +48,6 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-//        여기서 있는 양보다 많은 페이지수를 넘기면 null포인트나옴
-//        todo fragment나머지 다 만들면 변경하기
-        return 4;
+        return fragments.length;
     }
 }

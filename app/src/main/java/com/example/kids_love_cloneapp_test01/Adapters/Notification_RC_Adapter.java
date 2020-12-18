@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kids_love_cloneapp_test01.Items.RC_Notification_item;
 import com.example.kids_love_cloneapp_test01.R;
+import com.example.kids_love_cloneapp_test01.fragments.Home_FG;
+import com.example.kids_love_cloneapp_test01.fragments.Notification_FG;
 
 import java.util.ArrayList;
 

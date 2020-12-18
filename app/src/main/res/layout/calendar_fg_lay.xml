@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical|fill_horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:background="#dddd"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <Button
+            android:id="@+id/to_day_calendar"
+            android:text="오늘"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--todo clickEvent Main에서 처리해야함-->
+            <ImageView
+                android:id="@+id/btn_left_calendar"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:onClick="click_notiy_leftBTN"
+                android:src="@drawable/ic_8080_arrow_left_24"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:text="2020년"
+                android:id="@+id/yy_calendar"
+                android:clickable="true"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/mm_calendar"
+                android:clickable="true"
+                android:text="12월"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+
+            <ImageView
+                android:id="@+id/btn_right_calendar"
+                android:clickable="true"
+                android:src="@drawable/ic_8080_arrow_right_24"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+        <Button
+            android:visibility="invisible"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_calendar"
+        android:background="#EFEFEF"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingHorizontal="6dp"
+        android:paddingTop="6dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
